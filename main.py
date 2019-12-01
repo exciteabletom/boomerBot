@@ -5,19 +5,23 @@ from private import prodToken, devToken
 
 import time
 
-boomerWords = ["millennial", "milennial", "these days", "kids these days", "back in","in my day", "when i was young", "we used to", "we never", "snowflake", "lazy",
-               "entitled", "use our imagination", "damn kids", "out of hand", "gone too far", "gone to far", "the war", "the depression", "aoc", "trump is good"]
+boomerWords = ["millennial", "liberal", "milennial", "these days", "kids these days", "back in","in my day", "when i was young", "we used to", "we never", "snowflake", "lazy",
+               "entitled", "use our imagination", "damn kids", "out of hand", "gone too far", "gone to far", "the war", "the depression", "aoc", "trump is good", "stupid kids",
+               "stop complaining", "republican", "trump", "conservative", "politics", "out of hand",":))", "@OkBoomer_Bot"]
 
 def main_loop(msg):
     contentType, chatType, chatId = telepot.glance(msg)
+
 
     if contentType == "text":
         msgText = msg["text"].lower()  # message sent converted to lower case
 
         for word in boomerWords:  # loop through array of boomer words
             if word in msgText:  # if a boomer word is in the message
-                bot.sendMessage(chatId, "Ok, Boomer")  # send epic ok boomer roast
+                message = "Ok, Boomer" 
+                bot.sendMessage(chatId, message)  # send epic ok boomer roast
                 break  # if roast is sent stop loop
+
 
 
 bot = telepot.Bot(prodToken)
