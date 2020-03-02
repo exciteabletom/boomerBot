@@ -12,7 +12,6 @@ boomerWords = ["millennial", "liberal", "milennial", "these days", "kids these d
 def main_loop(msg):
     contentType, chatType, chatId = telepot.glance(msg)
 
-
     if contentType == "text":
         msgText = msg["text"].lower()  # message sent converted to lower case
 
