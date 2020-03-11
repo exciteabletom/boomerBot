@@ -17,7 +17,7 @@ def main_loop(msg):
 
         for word in boomerWords:  # loop through array of boomer words
             if word in msgText:  # if a boomer word is in the message
-                message = "Ok, Boomer" 
+                message = "Ok, Boomer." 
                 bot.sendMessage(chatId, message)  # send epic ok boomer roast
                 break  # if roast is sent stop loop
 
