@@ -7,7 +7,8 @@ import time
 
 boomerWords = ["millennial", "liberal", "milennial", "these days", "kids these days", "back in","in my day", "when i was young", "we used to", "we never", "snowflake", "lazy",
                "entitled", "use our imagination", "damn kids", "out of hand", "gone too far", "gone to far", "the war", "the depression", "aoc", "trump", "stupid kids",
-               "stop complaining", "republican", "trump", "conservative", "politics", "out of hand",":))", ":((", "@OkBoomer_Bot"]
+               "stop complaining", "republican", "trump", "bernie". "biden", "clinton", "conservative", "liberal" "politics", "out of hand",":))", ":((", "@OkBoomer_Bot",
+			   "get over it", "it's not that bad", "its not that bad"]
 
 def main_loop(msg):
     contentType, chatType, chatId = telepot.glance(msg)
@@ -17,7 +18,7 @@ def main_loop(msg):
 
         for word in boomerWords:  # loop through array of boomer words
             if word in msgText:  # if a boomer word is in the message
-                message = "Ok, Boomer." 
+                message = f"Ok, Boomer.\n\nTriggered by {word}" 
                 bot.sendMessage(chatId, message)  # send epic ok boomer roast
                 break  # if roast is sent stop loop
 
