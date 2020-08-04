@@ -7,7 +7,7 @@ import time
 
 boomerWords = ["millennial", "liberal", "milennial", "these days", "kids these days", "back in","in my day", "when i was young", "we used to", "we never", "snowflake", "lazy",
                "entitled", "use our imagination", "damn kids", "out of hand", "gone too far", "gone to far", "the war", "the depression", "aoc", "trump", "stupid kids",
-               "stop complaining", "republican", "trump", "bernie", "biden", "clinton", "conservative", "liberal" "politics", "out of hand",":))", ":((", "@OkBoomer_Bot",
+               "stop complaining", "republican", "trump", "bernie", "biden", "clinton", "conservative", "liberal" "politics", "out of hand",":))", ":((", "@okboomer_bot",
 			   "get over it", "it's not that bad", "its not that bad"]
 
 def main_loop(msg):
