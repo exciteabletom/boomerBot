@@ -21,11 +21,12 @@ def main_loop(msg):
 	if contentType == "text":
 		msgText = msg["text"].lower()  # message sent converted to lower case
 
-		for word in boomerWords:  # loop through array of boomer words
-			if word in msgText:  # if a boomer word is in the message
-				message = f"Ok, Boomer.\n\nTriggered by the phrase '{word}'"
-				bot.sendMessage(chatId, message)  # send epic ok boomer roast
-				break  # if roast is sent stop loop
+		for boomerWord in boomerWords:  # loop through array of boomer words
+			for msgWord in msgText.split(" "):
+				if msgWord == boomerWord:  # if a boomer word is in the message
+					message = f"Ok, Boomer.\n\nTriggered by the phrase '{boomerWord}'"
+					bot.sendMessage(chatId, message)  # send epic ok boomer roast
+					break  # if roast is sent stop loop
 
 
 bot = telepot.Bot(prodToken)
