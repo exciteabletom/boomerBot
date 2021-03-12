@@ -1,5 +1,5 @@
-import telepot  # telegram bot lib
-from telepot.loop import MessageLoop  # loop to check for messages
+import amanobot  # telegram bot lib
+from amanobot.loop import MessageLoop  # loop to check for messages
 
 from private import prodToken, devToken
 
@@ -16,7 +16,7 @@ boomerWords = (
 
 
 def main_loop(msg):
-	contentType, chatType, chatId = telepot.glance(msg)
+	contentType, chatType, chatId = amanobot.glance(msg)
 
 	if contentType == "text":
 		msgText = msg["text"].lower()  # message sent converted to lower case
@@ -29,7 +29,7 @@ def main_loop(msg):
 					break  # if roast is sent stop loop
 
 
-bot = telepot.Bot(prodToken)
+bot = amanobot.Bot(prodToken)
 
 MessageLoop(bot, main_loop).run_as_thread()  # constantly checks for new messages, if new message call main_loop()
 
