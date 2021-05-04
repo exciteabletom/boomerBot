@@ -34,4 +34,4 @@ bot = amanobot.Bot(prodToken)
 MessageLoop(bot, main_loop).run_as_thread()  # constantly checks for new messages, if new message call main_loop()
 
 while True:  # keeps program alive
-	time.sleep(10)
+	time.sleep(1)
