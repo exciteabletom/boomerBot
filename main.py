@@ -1,5 +1,5 @@
-import amanobot  # telegram bot lib
-from amanobot.loop import MessageLoop  # loop to check for messages
+import amanobot
+from amanobot.loop import MessageLoop
 
 from private import prodToken, devToken
 
@@ -19,19 +19,16 @@ def main_loop(msg):
 	contentType, chatType, chatId = amanobot.glance(msg)
 
 	if contentType == "text":
-		msgText = msg["text"].lower()  # message sent converted to lower case
-
-		for boomerWord in boomerWords:  # loop through array of boomer words
-			for msgWord in msgText.split(" "):
-				if msgWord == boomerWord:  # if a boomer word is in the message
-					message = f"Ok, Boomer.\n\nTriggered by the phrase '{boomerWord}'"
-					bot.sendMessage(chatId, message)  # send epic ok boomer roast
-					break  # if roast is sent stop loop
-
+		msgText = msg["text"].lower()
+		for boomerWord in boomerWords:
+			if boomerWord in msgText:
+				message = f"Ok, Boomer.\n\nTriggered by the phrase '{boomerWord}'"
+				bot.sendMessage(chatId, message)
+				break 
 
 bot = amanobot.Bot(prodToken)
 
 MessageLoop(bot, main_loop).run_as_thread()  # constantly checks for new messages, if new message call main_loop()
 
-while True:  # keeps program alive
+while True:
 	time.sleep(1)
